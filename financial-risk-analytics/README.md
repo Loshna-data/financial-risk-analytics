@@ -79,7 +79,7 @@ Below is the interactive financial risk analytics dashboard built using Streamli
 ## 🚀 How to Run Project
 
 ```bash
-git clone https://github.com/your-username/financial-risk-analytics.git
+git clone https://github.com/Loshna-data/financial-risk-analytics
 cd financial-risk-analytics
 pip install -r requirements.txt
 streamlit run app/app.py
