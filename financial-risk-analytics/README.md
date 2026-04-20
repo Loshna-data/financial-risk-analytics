@@ -68,6 +68,12 @@ The model predicts whether a borrower will repay a loan or default.
 - Visual charts for financial profile
 - Recommendation system for loan decision
 
+## 📷 Dashboard Preview
+
+Below is the interactive financial risk analytics dashboard built using Streamlit:
+
+![Dashboard](images/dashboard.png)
+
 ---
 
 ## 🚀 How to Run Project
