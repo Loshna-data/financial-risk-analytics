@@ -83,3 +83,8 @@ git clone https://github.com/Loshna-data/financial-risk-analytics
 cd financial-risk-analytics
 pip install -r requirements.txt
 streamlit run app/app.py
+
+## 🚀 Live Demo
+
+👉 Try the interactive dashboard here:  
+[Click to Open Dashboard](PASTE_YOUR_LINK_HERE)
