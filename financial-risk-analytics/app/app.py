@@ -1,4 +1,3 @@
-
 import streamlit as st
 import matplotlib.pyplot as plt
 
@@ -16,7 +15,11 @@ loan_amount = st.number_input("🏦 Loan Amount", min_value=0)
 if st.button("🔍 Assess Risk"):
 
     # 🧠 Risk Score Formula
-    score = (loan_amount / (income + 1)) * 50 + (700 - credit_score) * 0.1 + debt_ratio * 50
+    score = (
+        (loan_amount / (income + 1)) * 50
+        + (700 - credit_score) * 0.1
+        + debt_ratio * 50
+    )
 
     # 🎯 Risk Classification
     if score < 30:
@@ -38,6 +41,32 @@ if st.button("🔍 Assess Risk"):
     st.subheader(f"📌 Risk Score: {score:.2f}")
     st.markdown(f"### Risk Level: :{color}[{level}]")
     st.info(f"💡 Suggestion: {suggestion}")
+
+    # 🧠 Risk Explanation
+    reasons = []
+
+    if credit_score < 600:
+        reasons.append("📉 Low credit score")
+
+    if debt_ratio > 0.4:
+        reasons.append("📊 High debt-to-income ratio")
+
+    if income < 30000:
+        reasons.append("💼 Low annual income")
+
+    if loan_amount > 50000:
+        reasons.append("🏦 Large loan amount")
+
+    # ✅ Safe Applicant Explanation
+    if len(reasons) == 0:
+        reasons.append("✅ Strong financial profile")
+        reasons.append("✅ Healthy credit score")
+        reasons.append("✅ Manageable debt ratio")
+
+    st.subheader("📌 Risk Explanation")
+
+    for reason in reasons:
+        st.write("-", reason)
 
     # 📈 Progress Bar
     st.progress(min(int(score), 100))
